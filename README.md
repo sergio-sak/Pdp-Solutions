@@ -22,7 +22,7 @@ If you're struggling with your PDP preparations, you can use these solutions as 
 For those interested in exploring past year contests, you can visit the [PDP Archive](https://pdp-archive.github.io). It's a treasure trove of coding challenges and solutions from previous years.
 
 ## Get in Touch
-If you find these solutions helpful or have any questions, don't hesitate to **reach out**. You can find me on [Instagram](https://www.instagram.com/sergio._sak/) or [Email](ssergioss@protonmail.com).
+If you find these solutions helpful or have any questions, don't hesitate to **reach out**. You can find me on [Instagram](https://www.instagram.com/sergio._sak/) or [Email: ssergioss@protonmail.com](ssergioss@protonmail.com).
 
 ## Acknowledgments
 A big shoutout to the PDP community and all the people who helped me along the way. Sharing knowledge and helping each other is what makes us stronger. 💪
