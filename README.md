@@ -5,7 +5,7 @@
 ## About
 Welcome to my PDP Solutions Repository! 🚀
 
-This repository contains my solutions for the **Panellinios Diagwnismos Plhroforikhs (PDP: https://pdp-archive.github.io)**. These solutions are the result of my hard work and dedication. They are not just lines of code; they represent my understanding and problem-solving skills.
+This repository contains my solutions for the **Panellinios Diagwnismos Plhroforikhs (PDP: pdp.gr)**. These solutions are the result of my hard work and dedication. They are not just lines of code; they represent my understanding and problem-solving skills.
 
 ## Notice
 🛑 **Important:** These solutions are my intellectual property. While I've decided to share them here, please respect the effort I've put into them. Feel free to **view** and **learn** from them, but **do not** copy, steal, or reuse them without my permission.
