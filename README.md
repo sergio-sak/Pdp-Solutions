@@ -1,6 +1,6 @@
 # !Pdp Archive Sergio Sakellaropoulos!
 
-![PDP Archive Banner](pdp_archive_banner.png)
+![PDP Banner](Banner.png)
 
 ## About
 Welcome to my PDP Solutions Repository! 🚀
