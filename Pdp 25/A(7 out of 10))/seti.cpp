@@ -6,7 +6,7 @@ std::vector<int> seti, res;
 int main()
 {
     seti.push_back(-1);
-    freopen("seti.in7", "r", stdin);
+    freopen("seti.in", "r", stdin);
     #ifdef CONTEST
         freopen("seti.out", "w", stdout);
     #endif 
