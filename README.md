@@ -23,10 +23,3 @@ For those interested in exploring past year contests, you can visit the [PDP Arc
 
 ## Get in Touch
 If you find these solutions helpful or have any questions, don't hesitate to **reach out**. You can find me on [Instagram](https://www.instagram.com/sergio._sak/) or [Email: ssergioss@protonmail.com](ssergioss@protonmail.com).
-
-## Acknowledgments
-A big shoutout to the PDP community and all the people who helped me along the way. Sharing knowledge and helping each other is what makes us stronger. 💪
-
----
-
-> **Note:** Remember that success comes from understanding and learning, not from shortcuts. Use these solutions responsibly and make the most of your learning journey.
