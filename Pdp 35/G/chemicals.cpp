@@ -8,7 +8,7 @@ typedef std::pair<ll, ll> pl;
 
 ll N, K, temp, left = 0, right = 0, complement, res = 0;
 vll chemicals;
-std::unordered_map<ll, vll> hmap;
+std::unordered_map<ll, ll> hmap;
 
 int main()
 {
@@ -16,35 +16,28 @@ int main()
         freopen("chemicals.in", "r", stdin);
         freopen("chemicals.out", "w", stdout);
     #else
-        freopen("testcases/chemicals.in2", "r", stdin);
+        freopen("testcases/chemicals.in1", "r", stdin);
     #endif
 
     scanf("%lld %lld", &N, &K);
     for(int i = 0; i < N; ++i){
         scanf("%lld", &temp);
         chemicals.push_back(temp%K);
-        hmap[chemicals[i]].push_back(i);
     }
 
     while(left<=right && right < N) {
         complement = K - chemicals[right];
-        if(hmap.count(complement)){
-            int i = 0;
-            while(hmap[complement][i] == -1 && i < hmap[complement].size()){
-                i++;
-            }
-            if(hmap[complement][i]>right) right++;
-            else {
-                int i = 0;
-                hmap[complement][i] = -1;
+        if(complement == K) complement = 0;
+        if(hmap.count(complement) && hmap[complement] > 0){
+            while(hmap[complement] != 0){
+                hmap[chemicals[left]]--;
                 left++;
             }
         }
-        else {
-            right++;
-        }
-        std::cout << left << " " << right << std::endl;
-        res = std::max(res, right-left+1);
+        hmap[chemicals[right]]++;
+        right++;
+        res = std::max(res, right-left);
+        // std::cout << left << " " << right << " " << res << std::endl;
     }
     printf("%lld\n", res);
     return 0;
