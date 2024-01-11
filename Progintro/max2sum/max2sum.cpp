@@ -26,15 +26,15 @@ int main()
     }
 
     for (int i = 0; i < N; i++) {
-        if(max1<max2sum[i]+i){
-            max1 = max2sum[i]+i;
+        if(max1<max2sum[i]-i){
+            max1 = max2sum[i]-i;
             indx = i;
         }
     }
 
     for(int i = 0; i < N; i++){
-        if(i!=indx && max2<max2sum[i]-i)
-            max2 = max2sum[i]-i;
+        if(i!=indx && max2<max2sum[i]+i)
+            max2 = max2sum[i]+i;
     }
     printf("%lld\n", max1+max2);
     return 0;
