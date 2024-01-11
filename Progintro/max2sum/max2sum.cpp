@@ -6,7 +6,7 @@ typedef std::vector<long long> vll;
 typedef std::pair<int, int> pi;
 typedef std::pair<ll, ll> pl;
 
-ll N, temp, max1 = -1, max2 = -1, indx;
+ll N, temp, max1_1 = -1, max1_2 = -1, max2_1 = -1, max2_2 = -1, indx1, indx2;
 vll max2sum;
 
 int main()
@@ -26,16 +26,23 @@ int main()
     }
 
     for (int i = 0; i < N; i++) {
-        if(max1<max2sum[i]-i){
-            max1 = max2sum[i]-i;
-            indx = i;
+        if(max1_1<max2sum[i]-i){
+            max1_1 = max2sum[i]-i;
+            indx1 = i;
+        }
+        if(max2_1<max2sum[i]+i){
+            max2_1 = max2sum[i]+i;
+            indx2 = i;
         }
     }
 
     for(int i = 0; i < N; i++){
-        if(i!=indx && max2<max2sum[i]+i)
-            max2 = max2sum[i]+i;
+        if(i!=indx1 && max1_2<max2sum[i]+i)
+            max1_2 = max2sum[i]+i;
+
+        if(i!=indx2 && max2_2<max2sum[i]-i)
+            max2_2 = max2sum[i]-i;
     }
-    printf("%lld\n", max1+max2);
+    printf("%lld\n", std::max(max1_1+max1_2, max2_1+max2_2));
     return 0;
 }
