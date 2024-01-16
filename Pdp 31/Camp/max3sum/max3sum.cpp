@@ -6,7 +6,7 @@ typedef std::vector<long long> vll;
 typedef std::pair<int, int> pi;
 typedef std::pair<ll, ll> pl;
 
-ll N, temp;
+ll N, temp, max1 = -1, max2 = -1, max3 = -1;
 vll ms1, ms2, ms3;
 
 int main()
@@ -32,5 +32,12 @@ int main()
         }
     }
     
+    for(int i = 0; i < N-2; ++i){ //N-2 gia na mhn vgazei seg fault
+        max1 = std::max(max1, ms1[i]);
+        max2 = std::max(max2, max1 + ms2[i+1]);
+        max3 = std::max(max3, max2 + ms3[i+2]);   
+        // std::cout << max1 << " " << max2 << " " << max3 << std::endl;
+    }
+    printf ("%lld\n", max3);
     return 0;
 }
