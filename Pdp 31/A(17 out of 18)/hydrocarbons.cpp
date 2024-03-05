@@ -24,8 +24,8 @@ int main()
     scanf("%lld", &N);
     for(int i = 1; i <= N; ++i){
         scanf("%Lf %Lf %Lf", &a, &b, &c);
-        efficiency = (int)a - a * (b / 3000.0) - c * a / 40.0;
-        if(efficiency >0){
+        efficiency = (long long)a - a * (b / 3000.0) - c * a / 40.0;
+        if(efficiency > 0){
             result.push_back(std::make_pair(i, efficiency));
             count++;
         }
