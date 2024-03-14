@@ -7,37 +7,49 @@ typedef std::pair<int, int> pi;
 typedef std::pair<ll, ll> pl;
 
 int N, M, count;
-std::vector<std::vector<char>> maze;
+std::vector<std::vector<char>> maze, path;
 std::vector<std::vector<bool>> visited;
+std::vector<pi> moves;
 
-void dfs(int x, int y) {
-    std::stack<pi> s;
-    s.push(std::make_pair(x, y));
-    while(!s.empty()) {
-        pi u = s.top(); s.pop();
-        visited[u.first][u.second] = true;
-        
-        if(maze[u.first][u.second] == 'U') {
-            u.first++;
-            s.push(std::make_pair(u.first, u.second));
-        }
-        else if(maze[u.first][u.second] == 'D') {
-            u.first--;
-            s.push(std::make_pair(u.first, u.second));
-        }
-        else if(maze[u.first][u.second] == 'L') {
-            u.second--;
-            s.push(std::make_pair(u.first, u.second));
-        }
-        else if(maze[u.first][u.second] == 'R') {
-            u.second++;
-            s.push(std::make_pair(u.first, u.second));
-        }
-        if(u.first < 0 || u.first >= N || u.second < 0 || u.second >= M) {
+void dfs(int y, int x) {
+    // for(auto outer : path) {
+    //     for(auto inner : outer) {
+    //         printf("%c", inner);
+    //     }
+    //     printf("\n");
+    // }
+    // printf("\n");
+
+    while(true) {
+        visited[y][x] = true;
+        moves.push_back({y, x});
+
+        if(maze[y][x] == 'U') y--;
+        else if(maze[y][x] == 'D') y++;
+        else if(maze[y][x] == 'L') x--;
+        else if(maze[y][x] == 'R') x++;
+
+        if(y < 0 || y >= N || x < 0 || x >= M) {
+            for(auto p : moves) {
+                path[p.first][p.second] = 'O';
+            }
+            moves.clear();
             return;
         }
-        if(visited[u.first][u.second]) {
+
+        if(visited[y][x]) {
+            if(path[y][x] == 'O') {
+                for(auto p : moves) {
+                    path[p.first][p.second] = 'O';
+                }
+                moves.clear();
+                return;
+            }
+            for(auto p : moves) {
+                path[p.first][p.second] = 'I';
+            }
             count++;
+            moves.clear();
             return;
         }
     }
@@ -54,6 +66,7 @@ int main()
     scanf("%d %d", &N, &M);
     maze.resize(N, std::vector<char>(M));
     visited.resize(N, std::vector<bool>(M, false));
+    path.resize(N, std::vector<char>(M, 'N'));
 
     for(int i = 0; i < N; i++) {
         for(int j = 0; j < M; j++) {
@@ -64,11 +77,6 @@ int main()
     for(int i = 0; i < N; i++) {
         for(int j = 0; j < M; j++) {
             dfs(i, j);
-            for(int k = 0; k < N; k++) {
-                for(int l = 0; l < M; l++) {
-                    visited[k][l] = false;
-                }
-            }
         }
     }
     printf("%d\n", count);

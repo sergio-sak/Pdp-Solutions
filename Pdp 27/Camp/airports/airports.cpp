@@ -50,7 +50,7 @@ int main()
         edges.push_back({w, u, v});
     }
     std::sort(edges.begin(), edges.end());
-
+    
     //airports
     for(int i = 1; i <= N; ++i) {
         connection[i] = i;
