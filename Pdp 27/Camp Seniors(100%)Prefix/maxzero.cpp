@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 
-std::unordered_map<long long, std::vector<long long>> hmap;
-std::vector<long long> prefix;
-long long N, res = 0, temp = 0;
+std::unordered_map<int, std::pair<int, int>> hmap;
+std::vector<long> prefix;
+int N, res = 0, temp = 0;
 
 int main()
 {
@@ -10,24 +10,32 @@ int main()
         freopen("maxzero.in", "r", stdin);
         freopen("maxzero.out", "w", stdout);
     #else
-        freopen("maxzero.in", "r", stdin);
+        freopen("maxzero.in4", "r", stdin);
     #endif
     
-    scanf("%ld", &N);
-    for(long long i = 0, prefix_cur = 0; i < N; ++i){
-        scanf("%ld", &temp);   
+    scanf("%d", &N);
+    prefix.push_back(0);
+    hmap[0].first=0;
+    
+    for(int i = 1, prefix_cur = 0; i <= N; ++i){
+        scanf("%d", &temp);   
         prefix_cur += temp;
         prefix.push_back(prefix_cur);
-        hmap[prefix_cur].push_back(i);
+        if(hmap.find(prefix_cur)==hmap.end())
+            hmap[prefix_cur].first=i;
+        hmap[prefix_cur].second=i;
     }
+    // for(auto el : prefix){
+    //     printf("%d ", el);
+    // }
     if(hmap.find(0)!=hmap.end()){
-        res = hmap[0].back()+1;
+        res = hmap[0].first;
     }
-    for(long long i = 0; i < N; ++i){
-        if(hmap[prefix[i]].size()>1){
-            res = std::max(res, hmap[prefix[i]].back() - hmap[prefix[i]][0]);
+    for(int i = 1; i <= N; ++i){
+        if(hmap.find(prefix[i])!=hmap.end()){
+            res = std::max(res, hmap[prefix[i]].second - hmap[prefix[i]].first);
         }
     }
-    printf("%ld\n", res);
+    printf("%d\n", res);
     return 0;
 }

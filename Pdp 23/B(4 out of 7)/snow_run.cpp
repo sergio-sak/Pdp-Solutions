@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 
-long N, cur, compare;
-std::unordered_map<long, long> res;
+long long N, cur, compare;
+std::unordered_map<long long, long long> res;
 
 int main()
 {
@@ -12,13 +12,13 @@ int main()
         freopen("snow_run.in5", "r", stdin);
     #endif
     scanf("%ld", &N);
-    for(long i = 1; i <= N; ++i){
+    for(long long i = 1; i <= N; ++i){
         scanf("%ld", &cur);
         res[i] = cur;
     }
-    for(long i = N; i >= 1; --i){
+    for(long long i = N; i >= 1; --i){
         compare = res[i];
-        for(long j = i; j >= 1; --j){
+        for(long long j = i; j >= 1; --j){
             if(compare <= res[j] && i != j){
                 res[j]++;
             }

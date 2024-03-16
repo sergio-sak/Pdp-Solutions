@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 
-std::unordered_map<long, std::vector<long>> hmap;
-std::vector<long> nums;
-long N;
+std::unordered_map<int, std::vector<int>> hmap;
+std::vector<int> nums;
+int N;
 
 int main()
 {
@@ -19,16 +19,16 @@ int main()
     }
     //Suffix Sum calculate
     hmap[0].push_back(N+1);
-    for(long suffix = 0, i = N; i > 0; --i){
+    for(int suffix = 0, i = N; i > 0; --i){
         suffix += nums[i];
         hmap[suffix].push_back(i);
     }
-    long res = N;
-    for(long prefix = 0, i = 0; i <= N; ++i){
+    int res = N;
+    for(int prefix = 0, i = 0; i <= N; ++i){
         prefix+=nums[i];
         if(hmap.find(prefix) == hmap.end())
             continue;
-        std::vector<long>& hmap_ref = hmap[prefix];
+        std::vector<int>& hmap_ref = hmap[prefix];
         while(!hmap_ref.empty() && hmap_ref.back() <= i)
             hmap_ref.pop_back();
         if(!hmap_ref.empty()){

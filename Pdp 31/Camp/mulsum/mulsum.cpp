@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 
-long long N, M, prefix = 0, temp, res = 0;
-std::vector<long long> sum;
-std::unordered_map<long long, std::vector<long long>> hmap;
+int N, M, prefix = 0, temp, res = 0;
+std::vector<int> sum;
+std::unordered_map<int, std::vector<int>> hmap;
 
 int main()
 {
@@ -12,11 +12,11 @@ int main()
     #else
         freopen("testcases/mulsum.in4", "r", stdin);
     #endif
-    scanf("%lld %lld", &N, &M);
+    scanf("%d %d", &N, &M);
     sum.push_back(0);
     hmap[0].push_back(0);
     for(int i = 1; i <= N; ++i){
-        scanf("%lld", &temp);       
+        scanf("%d", &temp);       
         prefix += temp;
         sum.push_back(prefix);
         hmap[std::abs(prefix % M)].push_back(i);
@@ -27,6 +27,6 @@ int main()
             hmap[sum[i]%M].pop_back();
         }
     }
-    printf("%lld", res);
+    printf("%d", res);
     return 0;
 }

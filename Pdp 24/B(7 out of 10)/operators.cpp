@@ -10,6 +10,7 @@ int main()
     #else
         freopen("Files/operators.in3", "r", stdin);
     #endif
+    
     scanf("%ld", &N);
     for(int i = 1; i <= N; ++i){
         scanf("%ld", &num);
