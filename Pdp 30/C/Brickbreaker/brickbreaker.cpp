@@ -7,8 +7,9 @@ typedef std::pair<int, int> pi;
 typedef std::pair<ll, ll> pl;
 
 int N, M, Q;
-std::vector<std::vector<bool>> bricks;
-vi connection((size_t)(1e3+3)), size((size_t)(1e3 + 3));
+std::vector<bool> bricks((size_t)(1e3+3));
+std::vector<pi> queries((size_t)(1e3+3));
+vi connection((size_t)(1e3+3)), rank((size_t)(1e3 + 3));
 
 int convert(int i, int j){
     return i * M + j;
@@ -28,15 +29,18 @@ bool same(int a, int b){
 void unite(int a, int b){
     a = find(a);
     b = find(b);
-    if(size[a] < size[b]) std::swap(a, b);
-    size[a] += size[b];
-    connection[b] = a;
+    if(rank[a] == rank[b])
+        rank[a]++;
+    if(rank[a] > rank[b])
+        connection[b] = a;
+    else
+        connection[a] = b;
 }
 
 void init(int N){
     for(int i = 0; i < N; ++i){
         connection[i] = i;
-        size[i] = 1;
+        rank[i] = 0;
     }
 }
 
@@ -53,17 +57,21 @@ int main()
     #endif
    
     scanf("%d %d\n", &N, &M);
-    bricks.resize(N, std::vector<bool>(M, false));
    
-    for(int i = 0; i < N; ++i){
-        for(int j = 0; j < M; ++j) {
-
+    for(int i = 0; i < N*M; ++i){
             char chr;
             scanf("%c ", &chr);
-            if(chr == '#') bricks[i][j] = true;
-        }
+            if(chr == '#') bricks[i] = true;
     }
    
+    scanf("%d\n", &Q);
+    for(int i = 0; i < Q; ++i){
+        int x, y;             
+        scanf("%d %d\n", &x, &y);
+        bricks[convert(x, y)] = false;                                                                              
+        queries[i] = {x, y};
+    }
+    
     return 0;
 }
 
