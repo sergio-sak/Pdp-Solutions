@@ -6,8 +6,8 @@ std::unordered_map<long long, long long> res;
 int main()
 {
     #ifdef CONTEST
-        freopen("snow_run.in", "r", stdin);
-        freopen("snow_run.out", "w", stdout);
+        freopen("rafting.in", "r", stdin);
+        freopen("rafting.out", "w", stdout);
     #else
         freopen("snow_run.in5", "r", stdin);
     #endif
@@ -25,7 +25,7 @@ int main()
         }
     }
     for(int i = 1; i <= N; ++i){
-        printf("%ld\n", res[i]);
+        printf("%ld ", res[i]);
     }
     return 0; //(4/7)
 }

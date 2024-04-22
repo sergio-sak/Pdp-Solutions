@@ -12,12 +12,6 @@ std::unordered_map<int, int> hmap;
 
 int main()
 {
-    #ifdef CONTEST
-        freopen("sumoffew.in", "r", stdin);
-        freopen("sumoffew.out", "w", stdout);
-    #else
-        freopen("sumoffew.in2", "r", stdin);
-    #endif
     scanf("%d %d", &N, &K);
 
     for(int i = 0; i < N; i++)
