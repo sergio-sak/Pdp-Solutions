@@ -9,7 +9,6 @@ typedef std::pair<ll, ll> pl;
 int N, M, K, cost = 0, costwithairports = 0;
 vi connection((size_t)(1e4+4)), size((size_t)(1e4+4));
 std::vector<std::tuple<int, int, int>> edges;
-std::vector<pl> airports;
 
 int find(int x) {
     while(x != connection[x]) x = connection[x];
@@ -30,12 +29,8 @@ void unite(int a, int b) {
 
 int main()
 {
-    #ifdef CONTEST
         freopen("airports.in", "r", stdin);
         freopen("airports.out", "w", stdout);
-    #else
-        freopen("airports.in", "r", stdin);
-    #endif
     
     scanf("%d %d %d", &N, &M, &K);
     for(int i = 0; i < M; ++i) {

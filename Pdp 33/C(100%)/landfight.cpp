@@ -28,9 +28,11 @@ int main()
         prefix+=nums[i];
         if(hmap.find(prefix) == hmap.end())
             continue;
+
         std::vector<int>& hmap_ref = hmap[prefix];
         while(!hmap_ref.empty() && hmap_ref.back() <= i)
             hmap_ref.pop_back();
+            
         if(!hmap_ref.empty()){
             res = std::min(res, hmap_ref.back() - i - 1);
         }
