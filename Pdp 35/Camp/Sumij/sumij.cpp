@@ -13,12 +13,7 @@ pl res;
 
 int main()
 {
-    #ifdef CONTEST
-        freopen("sumij.in", "r", stdin);
-        freopen("sumij.out", "w", stdout);
-    #else
-        freopen("sumij.in", "r", stdin);
-    #endif
+    //Old code
     scanf("%lld", &T);
     for(int j = 0; j < T; ++j)
     {

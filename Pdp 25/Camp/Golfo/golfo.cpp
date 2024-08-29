@@ -104,15 +104,6 @@ int main()
         }
     }
 
-    // std::cout<<golfo<<std::endl;
-    // FOR(i, 1, N*N+1) {
-    //     std::cout<<i<<": ";
-    //     for(auto el : adj[i]){
-    //             std::cout<<el.se<<" ";
-    //     }
-    //     std::cout<<std::endl;
-    // }
-
     ll ans = dijkstra(tasos);
     if(ans == INF) printf("IMPOSSIBLE");
     else printf("%lld\n", ans);
