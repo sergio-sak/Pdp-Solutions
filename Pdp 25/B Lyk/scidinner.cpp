@@ -61,7 +61,7 @@ vi adj[MAXN];
 bool child[MAXN];
 int N, M, max_dist, dist[MAXN];
 
-void bfs(int x) {
+void dfs(int x) {
     std::stack<int> q;
     dist[x] = 1;
     q.push(x);

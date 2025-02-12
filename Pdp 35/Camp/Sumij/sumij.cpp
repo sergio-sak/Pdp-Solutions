@@ -13,6 +13,9 @@ pl res;
 
 int main()
 {
+    freopen("sumij.in", "r", stdin);
+    freopen("sumij.out", "w", stdout);
+    
     //Old code
     scanf("%lld", &T);
     for(int j = 0; j < T; ++j)

@@ -25,9 +25,7 @@ int main()
             hmap[prefix_cur].first=i;
         hmap[prefix_cur].second=i;
     }
-    // for(auto el : prefix){
-    //     printf("%d ", el);
-    // }
+
     if(hmap.find(0)!=hmap.end()){
         res = hmap[0].first;
     }

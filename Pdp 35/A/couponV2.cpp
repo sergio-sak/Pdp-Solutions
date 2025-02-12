@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <utility>
 #include <vector>
-#include <bit>
+// #include <bit>
 #include <set>
 #include <unordered_set>
 #include <map>
@@ -79,7 +79,7 @@ signed main()
     freopen("coupon.in", "r", stdin);
     freopen("coupon.out", "w", stdout);
 
-    sl(N); sf(A); sl(B); group.resize(N);
+    sl(N); slf(A); sl(B); group.resize(N);
     for(unsigned long long & v:group) sl(v);
 
     unsigned long long low = 0, high = B/group[0] + 10, mid;
