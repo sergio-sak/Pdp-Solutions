@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <utility>
 #include <vector>
-#include <bit>
+// #include <bit>
 #include <set>
 #include <unordered_set>
 #include <map>
@@ -13,19 +13,19 @@
 #include <string>
 #include <time.h>
 #include <random>
-#include <iomanip>
-#include <inttypes.h>
+// #include <iomanip>
+// #include <inttypes.h>
 
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp> 
+// #include <ext/pb_ds/assoc_container.hpp>
+// #include <ext/pb_ds/tree_policy.hpp> 
 
-using namespace __gnu_pbds;
+// using namespace __gnu_pbds;
 
-template <class T>
-using Tree = tree<T, null_type, std::less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+// template <class T>
+// using Tree = tree<T, null_type, std::less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
-#pragma GCC target("avx,avx2,fma")
-#pragma GCC optimize("O3,Ofast")
+// #pragma GCC target("avx,avx2,fma")
+// #pragma GCC optimize("O3,Ofast")
 
 #define EPS 1e-9
 #define PI acos(-1)
